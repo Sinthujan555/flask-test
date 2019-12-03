@@ -1,0 +1,9 @@
+[Unit]
+Description=Flask Application
+[Service]
+EnvironmentFile=/opt/flask-test/venv/bin/activate
+User=pythonadm
+WorkingDirectory=/opt/flask-test
+ExecStart=/bin/bash -c 'cd /opt/flask-test && source ./venv/bin/activate && ./app.py'
+[Install]
+WantedBy=multi-user.target
